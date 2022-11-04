@@ -14,6 +14,14 @@ float operatie_primara(float a, float b, char semn) {
 }
 
 float operatie_secundara(float a, float b, char semn) {
+    if (semn == '#') {
+        return (a + b) * (a + b);
+    }
+
+    return -1;
+}
+
+float operatie_tertiara(float a, float b, char semn) {
     if (semn == '+') {
         return a + b;
     } else if (semn == '-') {
@@ -53,17 +61,12 @@ int main() {
             // printf("%f %c %f ", v[idx_numere], *(semne+i), v[idx_numere + 1]);
             v[idx_numere+1] = operatie_primara(v[idx_numere], v[idx_numere+1], *(semne+i));
             remove_elem(v, idx_numere, &n);
-            // strcpy(semne + i, semne + i + 1);
-
-            // strcpy(aux, semne + i + 1);
-            // strcpy(semne + i, aux);
 
             snprintf(aux, strlen(semne),  semne + i + 1);
             snprintf(semne + i, strlen(semne), aux);
 
             i--;
             idx_numere--;
-            // printf("%s\n", semne);
         }
         idx_numere++;
     }
@@ -71,10 +74,26 @@ int main() {
     idx_numere = 0;
 
     for (int i = 0; i < n - 1; i++) {
-        // if (v[idx_numere] != -1 && v[idx_numere + 1] != -1) {
+        if (operatie_secundara(v[idx_numere], v[idx_numere+1], *(semne+i)) != -1) {
+            // printf("%f %c %f ", v[idx_numere], *(semne+i), v[idx_numere + 1]);
+            v[idx_numere+1] = operatie_secundara(v[idx_numere], v[idx_numere+1], *(semne+i));
+            remove_elem(v, idx_numere, &n);
+
+            snprintf(aux, strlen(semne),  semne + i + 1);
+            snprintf(semne + i, strlen(semne), aux);
+
+            i--;
+            idx_numere--;
+        }
+        idx_numere++;
+    }
+
+    idx_numere = 0;
+
+    for (int i = 0; i < n - 1; i++) {
         // printf("%f %c %f\n", v[idx_numere], *(semne+i), v[idx_numere + 1]);
-        v[idx_numere+1] = operatie_secundara(v[idx_numere], v[idx_numere+1], *(semne+i));
-        // }
+        v[idx_numere+1] = operatie_tertiara(v[idx_numere], v[idx_numere+1], *(semne+i));
+
         idx_numere++;
     }
 

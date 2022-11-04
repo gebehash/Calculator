@@ -1,49 +1,17 @@
 
 Run cpplint
 
-./task1.c:4:  Do not use variable-length arrays.  Use an appropriately named ('k' followed by CamelCase) compile-time constant for the size.  [runtime/arrays] [1]
-./task1.c:11:  Mismatching spaces inside () in if  [whitespace/parens] [5]
-./task1.c:24:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-./task1.c:32:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-./task1.c:40:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-./task1.c:45:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
-./task2.c:5:  Do not use variable-length arrays.  Use an appropriately named ('k' followed by CamelCase) compile-time constant for the size.  [runtime/arrays] [1]
-./task2.c:8:  Mismatching spaces inside () in if  [whitespace/parens] [5]
-./task2.c:35:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-./task2.c:39:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-./task2.c:56:  Almost always, snprintf is better than strcpy  [runtime/printf] [4]
-./task2.c:57:  Almost always, snprintf is better than strcpy  [runtime/printf] [4]
-./task2.c:79:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
-./utils.c:None:  utils.c should include its header file utils.h  [build/include] [5]
 Done processing ./task1.c
 Done processing ./task2.c
+Done processing ./task3.c
 Done processing ./utils.c
 Done processing ./utils.h
-Total errors found: 14
 
 Run clang-tidy
 
-14 warnings generated.
-29 warnings generated.
-29 warnings generated.
-/home/george/Desktop/teme/Calculator/task1.c:4:7: error: variable 'v' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables,-warnings-as-errors]
-float v[maxnumber];
-      ^
-/home/george/Desktop/teme/Calculator/task1.c:21:9: error: variable 'n' is not initialized [cppcoreguidelines-init-variables,-warnings-as-errors]
-    int n;
-        ^
-          = 0
-/home/george/Desktop/teme/Calculator/task1.c:29:10: error: variable 'semn' is not initialized [cppcoreguidelines-init-variables,-warnings-as-errors]
-    char semn;
-         ^
-              = 0
-/home/george/Desktop/teme/Calculator/task2.c:5:7: error: variable 'v' is non-const and globally accessible, consider making it const [cppcoreguidelines-avoid-non-const-global-variables,-warnings-as-errors]
-float v[maxnumber];
-      ^
-/home/george/Desktop/teme/Calculator/task2.c:36:9: error: variable 'n' is not initialized [cppcoreguidelines-init-variables,-warnings-as-errors]
-    int n;
-        ^
-          = 0
-Suppressed 24 warnings (24 in non-user code).
+11 warnings generated.
+28 warnings generated.
+43 warnings generated.
+43 warnings generated.
+Suppressed 43 warnings (37 in non-user code, 6 with check filters).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
-5 warnings treated as errors
