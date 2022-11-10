@@ -18,7 +18,7 @@ float operatie(float a, float b, char semn) {
 
 int main() {
     int n = 0;
-    float v[kMaxNumber];
+    float v[kMaxNumber] = {};
 
     scanf("%d", &n);
 

@@ -9,9 +9,10 @@ Done processing ./utils.h
 
 Run clang-tidy
 
-11 warnings generated.
-28 warnings generated.
-43 warnings generated.
-43 warnings generated.
-Suppressed 43 warnings (37 in non-user code, 6 with check filters).
+4 warnings generated.
+4 warnings generated.
+14 warnings generated.
+22 warnings generated.
+22 warnings generated.
+Suppressed 22 warnings (16 in non-user code, 6 with check filters).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
